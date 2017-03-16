@@ -26,11 +26,11 @@ namespace NRules.RuleModel.Aggregators
 
         public IEnumerable<AggregationResult> Add(object fact)
         {
-            var source = (TSource) fact;
+            var source = (TSource)fact;
             var value = _selector(source);
             var list = value.ToList();
             _sourceToList[source] = list;
-            
+
             return list.Select(x => AggregationResult.Added(x)).ToArray();
         }
 

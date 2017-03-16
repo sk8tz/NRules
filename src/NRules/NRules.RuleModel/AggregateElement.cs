@@ -46,8 +46,8 @@ namespace NRules.RuleModel
             get { return _expressionMap; }
         }
 
-        internal AggregateElement(IEnumerable<Declaration> declarations, Type resultType, string name, ExpressionMap expressionMap, IAggregatorFactory factory, PatternElement source) 
-            : base(declarations, resultType) 
+        internal AggregateElement(IEnumerable<Declaration> declarations, Type resultType, string name, ExpressionMap expressionMap, IAggregatorFactory factory, PatternElement source)
+            : base(declarations, resultType)
         {
             _name = name;
             _expressionMap = expressionMap;

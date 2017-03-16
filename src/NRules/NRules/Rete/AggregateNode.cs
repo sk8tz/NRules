@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using NRules.RuleModel;
+﻿using NRules.RuleModel;
+using System.Collections.Generic;
 
 namespace NRules.Rete
 {
@@ -103,9 +103,11 @@ namespace NRules.Rete
                     case AggregationAction.Added:
                         PropagateAggregateAssert(context, leftTuple, aggregateFact);
                         break;
+
                     case AggregationAction.Modified:
                         PropagateAggregateUpdate(context, leftTuple, aggregateFact);
                         break;
+
                     case AggregationAction.Removed:
                         PropagateAggregateRetract(context, leftTuple, aggregateFact);
                         break;

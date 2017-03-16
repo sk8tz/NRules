@@ -13,7 +13,7 @@ namespace NRules.Utilities
         /// <returns>Index lookup dictionary.</returns>
         public static Dictionary<TElement, int> ToIndexMap<TElement>(this IEnumerable<TElement> sequence)
         {
-            return sequence.Select((value, index) => new {value, index}).ToDictionary(x => x.value, x => x.index);
+            return sequence.Select((value, index) => new { value, index }).ToDictionary(x => x.value, x => x.index);
         }
 
         /// <summary>

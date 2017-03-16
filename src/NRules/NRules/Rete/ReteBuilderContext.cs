@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using NRules.RuleModel;
+﻿using NRules.RuleModel;
+using System.Collections.Generic;
 
 namespace NRules.Rete
 {
@@ -23,7 +23,7 @@ namespace NRules.Rete
         {
             get { return _declarations; }
         }
- 
+
         public AlphaNode CurrentAlphaNode { get; set; }
         public IAlphaMemoryNode AlphaSource { get; set; }
         public IBetaMemoryNode BetaSource { get; set; }

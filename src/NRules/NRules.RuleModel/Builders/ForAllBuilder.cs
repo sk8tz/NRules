@@ -32,7 +32,7 @@ namespace NRules.RuleModel.Builders
             _basePatternBuilder = new PatternBuilder(Scope, declaration);
             return _basePatternBuilder;
         }
-        
+
         /// <summary>
         /// Creates a pattern builder that builds a pattern of the forall element.
         /// </summary>

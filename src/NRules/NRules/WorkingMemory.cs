@@ -1,18 +1,26 @@
-﻿using System.Collections.Generic;
-using NRules.Rete;
+﻿using NRules.Rete;
+using System.Collections.Generic;
 
 namespace NRules
 {
     internal interface IWorkingMemory
     {
         IEnumerable<Fact> Facts { get; }
+
         Fact GetFact(object factObject);
+
         void SetFact(Fact fact);
+
         void RemoveFact(Fact fact);
+
         Fact GetInternalFact(INode node, object factObject);
+
         void SetInternalFact(INode node, Fact fact);
+
         void RemoveInternalFact(INode node, Fact fact);
+
         IAlphaMemory GetNodeMemory(IAlphaMemoryNode node);
+
         IBetaMemory GetNodeMemory(IBetaMemoryNode node);
     }
 

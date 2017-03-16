@@ -17,12 +17,12 @@ namespace NRules.RuleModel
         /// <param name="not">Action to invoke on the element if the element is a <see cref="NotElement"/>.</param>
         /// <param name="forall">Action to invoke on the element if the element is a <see cref="ForAllElement"/>.</param>
         [DebuggerStepThrough]
-        public static void Match(this RuleElement element, 
-            Action<PatternElement> pattern, 
-            Action<AggregateElement> aggregate, 
+        public static void Match(this RuleElement element,
+            Action<PatternElement> pattern,
+            Action<AggregateElement> aggregate,
             Action<GroupElement> group,
-            Action<ExistsElement> exists, 
-            Action<NotElement> not, 
+            Action<ExistsElement> exists,
+            Action<NotElement> not,
             Action<ForAllElement> forall)
         {
             if (element == null)
@@ -31,15 +31,15 @@ namespace NRules.RuleModel
             }
             else if (element is PatternElement)
             {
-                pattern.Invoke((PatternElement) element);
+                pattern.Invoke((PatternElement)element);
             }
             else if (element is GroupElement)
             {
-                group.Invoke((GroupElement) element);
+                group.Invoke((GroupElement)element);
             }
             else if (element is AggregateElement)
             {
-                aggregate.Invoke((AggregateElement) element);
+                aggregate.Invoke((AggregateElement)element);
             }
             else if (element is ExistsElement)
             {

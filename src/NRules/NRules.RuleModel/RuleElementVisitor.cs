@@ -91,7 +91,7 @@
                 dependency.Accept(context, this);
             }
         }
-        
+
         protected internal virtual void VisitDependency(TContext context, DependencyElement element)
         {
         }

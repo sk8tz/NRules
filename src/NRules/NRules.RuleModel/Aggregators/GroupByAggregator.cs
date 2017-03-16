@@ -14,7 +14,7 @@ namespace NRules.RuleModel.Aggregators
     {
         private readonly Func<TSource, TKey> _keySelector;
         private readonly Func<TSource, TElement> _elementSelector;
-        
+
         private readonly Dictionary<object, TKey> _sourceToKey = new Dictionary<object, TKey>();
         private readonly Dictionary<object, TElement> _sourceToElement = new Dictionary<object, TElement>();
 
@@ -36,7 +36,7 @@ namespace NRules.RuleModel.Aggregators
 
         public IEnumerable<AggregationResult> Add(object fact)
         {
-            var source = (TSource) fact;
+            var source = (TSource)fact;
             var key = _keySelector(source);
             var element = _elementSelector(source);
             _sourceToKey[fact] = key;
@@ -100,7 +100,7 @@ namespace NRules.RuleModel.Aggregators
             group.Add(element);
             return new[] { AggregationResult.Modified(group) };
         }
-        
+
         private IEnumerable<AggregationResult> Modify(TKey key, TElement element)
         {
             if (Equals(key, _defaultKey))
@@ -113,7 +113,7 @@ namespace NRules.RuleModel.Aggregators
             group.Modify(element);
             return new[] { AggregationResult.Modified(group) };
         }
-        
+
         private IEnumerable<AggregationResult> Remove(TKey key, TElement element)
         {
             if (Equals(key, _defaultKey))
@@ -144,7 +144,7 @@ namespace NRules.RuleModel.Aggregators
             {
                 var aggregates = _defaultGroup == null
                     ? _groups.Values
-                    : new[] {_defaultGroup}.Concat(_groups.Values);
+                    : new[] { _defaultGroup }.Concat(_groups.Values);
                 return aggregates;
             }
         }

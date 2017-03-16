@@ -5,9 +5,13 @@ namespace NRules.Rete
     internal interface INetwork
     {
         bool PropagateAssert(IExecutionContext context, object factObject);
+
         bool PropagateUpdate(IExecutionContext context, object factObject);
+
         bool PropagateRetract(IExecutionContext context, object factObject);
+
         void Activate(IExecutionContext context);
+
         void Visit<TContext>(TContext context, ReteNodeVisitor<TContext> visitor);
     }
 

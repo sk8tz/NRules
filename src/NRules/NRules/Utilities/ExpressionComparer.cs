@@ -109,12 +109,15 @@ namespace NRules.Utilities
                     var constx = GetValueOfConstantExpression(x);
                     var consty = GetValueOfConstantExpression(y);
                     return Equals(constx, consty);
+
                 case ExpressionType.Parameter:
                 case ExpressionType.MemberAccess:
                     return Equals(x.Member, y.Member) && ExpressionEqual(x.Expression, y.Expression, rootX, rootY);
+
                 case ExpressionType.New:
                 case ExpressionType.Call:
                     return ExpressionEqual(x.Expression, y.Expression, rootX, rootY);
+
                 default:
                     throw new NotImplementedException(x.ToString());
             }

@@ -1,13 +1,14 @@
-﻿using System;
+﻿using NRules.RuleModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using NRules.RuleModel;
 
 namespace NRules.Rete
 {
     internal interface IReteBuilder
     {
         IEnumerable<ITerminalNode> AddRule(IRuleDefinition rule);
+
         INetwork Build();
     }
 
@@ -59,7 +60,7 @@ namespace NRules.Rete
                 if (context.AlphaSource != null)
                 {
                     BuildJoinNode(context);
-                } 
+                }
                 Visit(context, childElement);
             }
         }
@@ -165,7 +166,7 @@ namespace NRules.Rete
 
             var node = context.BetaSource
                 .Sinks.OfType<JoinNode>()
-                .FirstOrDefault(x => 
+                .FirstOrDefault(x =>
                     x.RightSource == context.AlphaSource &&
                     x.LeftSource == context.BetaSource &&
                     ConditionComparer.AreEqual(x.Conditions, betaConditions));
@@ -282,7 +283,7 @@ namespace NRules.Rete
 
             context.AlphaSource = memoryNode;
         }
-        
+
         public INetwork Build()
         {
             INetwork network = new Network(_root, _dummyNode);

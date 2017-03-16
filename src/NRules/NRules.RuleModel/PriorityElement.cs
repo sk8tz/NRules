@@ -29,7 +29,7 @@ namespace NRules.RuleModel
             get { return _references; }
         }
 
-        public PriorityElement(IEnumerable<Declaration> declarations, IEnumerable<Declaration> references, LambdaExpression expression) 
+        public PriorityElement(IEnumerable<Declaration> declarations, IEnumerable<Declaration> references, LambdaExpression expression)
             : base(declarations)
         {
             _references = new List<Declaration>(references);

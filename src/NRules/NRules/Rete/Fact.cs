@@ -55,7 +55,7 @@ namespace NRules.Rete
 
         public Tuple WrappedTuple
         {
-            get { return (Tuple) RawObject; }
+            get { return (Tuple)RawObject; }
         }
     }
 }

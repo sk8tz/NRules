@@ -6,8 +6,11 @@ namespace NRules.Collections
     internal interface IPriorityQueue<in TPriority, TValue>
     {
         void Enqueue(TPriority priority, TValue value);
+
         TValue Dequeue();
+
         TValue Peek();
+
         bool IsEmpty { get; }
     }
 
@@ -81,7 +84,7 @@ namespace NRules.Collections
 
             while (pos > 0)
             {
-                int parentPos = (pos - 1)/2;
+                int parentPos = (pos - 1) / 2;
                 if (_comparer.Compare(_baseHeap[parentPos].Key, _baseHeap[pos].Key) < 0)
                 {
                     ExchangeElements(parentPos, pos);
@@ -115,8 +118,8 @@ namespace NRules.Collections
             {
                 //exchange element with its largest child if heap property is violated
                 int largest = pos;
-                int left = 2*pos + 1;
-                int right = 2*pos + 2;
+                int left = 2 * pos + 1;
+                int right = 2 * pos + 2;
                 if (left < _baseHeap.Count && _comparer.Compare(_baseHeap[largest].Key, _baseHeap[left].Key) < 0)
                     largest = left;
                 if (right < _baseHeap.Count && _comparer.Compare(_baseHeap[largest].Key, _baseHeap[right].Key) < 0)

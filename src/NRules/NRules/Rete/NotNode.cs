@@ -82,7 +82,7 @@ namespace NRules.Rete
 
         private void RetractTuple(IExecutionContext context, Tuple tuple)
         {
-           MemoryNode.PropagateRetract(context, tuple, null);
+            MemoryNode.PropagateRetract(context, tuple, null);
         }
     }
 }

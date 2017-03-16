@@ -50,6 +50,6 @@ namespace NRules
                 }
                 return message;
             }
-        } 
+        }
     }
 }

@@ -48,15 +48,15 @@ namespace NRules.Rete
         {
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
-            if (obj.GetType() != typeof (Activation)) return false;
-            return Equals((Activation) obj);
+            if (obj.GetType() != typeof(Activation)) return false;
+            return Equals((Activation)obj);
         }
 
         public override int GetHashCode()
         {
             unchecked
             {
-                return (Rule.GetHashCode()*397) ^ Tuple.GetHashCode();
+                return (Rule.GetHashCode() * 397) ^ Tuple.GetHashCode();
             }
         }
     }

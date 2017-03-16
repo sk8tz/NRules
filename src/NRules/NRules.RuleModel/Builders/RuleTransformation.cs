@@ -226,7 +226,6 @@ namespace NRules.RuleModel.Builders
                 {
                     newChildElements.Add(childElement);
                 }
-
             }
             var orElement = new OrElement(element.Declarations, newChildElements);
             Result(context, orElement);

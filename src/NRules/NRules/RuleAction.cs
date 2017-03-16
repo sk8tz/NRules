@@ -1,7 +1,7 @@
-using System;
-using System.Linq.Expressions;
 using NRules.Rete;
 using NRules.Utilities;
+using System;
+using System.Linq.Expressions;
 using Tuple = NRules.Rete.Tuple;
 
 namespace NRules
@@ -62,7 +62,7 @@ namespace NRules
                 executionContext.EventAggregator.RaiseActionFailed(executionContext.Session, actionContext.CompiledRule, e, _expression, tuple, out isHandled);
                 if (!isHandled)
                 {
-                    throw new RuleActionEvaluationException("Failed to evaluate rule action", 
+                    throw new RuleActionEvaluationException("Failed to evaluate rule action",
                         actionContext.Rule.Name, _expression.ToString(), e);
                 }
             }

@@ -20,7 +20,7 @@ namespace NRules
     {
         public object Resolve(IResolutionContext context, Type serviceType)
         {
-            const string message = "Dependency resolver not provided. " 
+            const string message = "Dependency resolver not provided. "
                 + "To use rule dependencies set a dependency resolver on the rules session.";
             throw new InvalidOperationException(message);
         }

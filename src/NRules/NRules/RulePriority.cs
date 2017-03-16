@@ -1,7 +1,7 @@
-﻿using System;
-using System.Linq.Expressions;
-using NRules.Rete;
+﻿using NRules.Rete;
 using NRules.Utilities;
+using System;
+using System.Linq.Expressions;
 using Tuple = NRules.Rete.Tuple;
 
 namespace NRules

@@ -25,10 +25,15 @@ namespace NRules.Rete
         }
 
         public abstract void PropagateAssert(IExecutionContext context, Tuple tuple);
+
         public abstract void PropagateUpdate(IExecutionContext context, Tuple tuple);
+
         public abstract void PropagateRetract(IExecutionContext context, Tuple tuple);
+
         public abstract void PropagateAssert(IExecutionContext context, Fact fact);
+
         public abstract void PropagateUpdate(IExecutionContext context, Fact fact);
+
         public abstract void PropagateRetract(IExecutionContext context, Fact fact);
 
         public abstract void Accept<TContext>(TContext context, ReteNodeVisitor<TContext> visitor);

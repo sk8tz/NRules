@@ -1,13 +1,16 @@
-﻿using System.Collections.Generic;
-using NRules.Collections;
+﻿using NRules.Collections;
+using System.Collections.Generic;
 
 namespace NRules.Rete
 {
     internal interface IAlphaMemory
     {
         IEnumerable<Fact> Facts { get; }
+
         bool Contains(Fact fact);
+
         void Add(Fact fact);
+
         void Remove(Fact fact);
     }
 

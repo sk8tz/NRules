@@ -25,7 +25,7 @@ namespace NRules.RuleModel.Aggregators
 
         public IEnumerable<AggregationResult> Add(object fact)
         {
-            var source = (TSource) fact;
+            var source = (TSource)fact;
             var value = _selector(source);
             _sourceToValue[source] = value;
             return new[] { AggregationResult.Added(value) };
@@ -41,7 +41,7 @@ namespace NRules.RuleModel.Aggregators
             if (Equals(oldValue, value))
                 return new[] { AggregationResult.Modified(value) };
 
-            return new[] {AggregationResult.Removed(oldValue), AggregationResult.Added(value)};
+            return new[] { AggregationResult.Removed(oldValue), AggregationResult.Added(value) };
         }
 
         public IEnumerable<AggregationResult> Remove(object fact)
@@ -49,7 +49,7 @@ namespace NRules.RuleModel.Aggregators
             var source = (TSource)fact;
             var oldValue = _sourceToValue[source];
             _sourceToValue.Remove(source);
-            return new[] {AggregationResult.Removed(oldValue)};
+            return new[] { AggregationResult.Removed(oldValue) };
         }
 
         public IEnumerable<object> Aggregates { get { return _sourceToValue.Values; } }

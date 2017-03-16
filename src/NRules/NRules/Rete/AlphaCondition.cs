@@ -1,6 +1,6 @@
+using NRules.Utilities;
 using System;
 using System.Linq.Expressions;
-using NRules.Utilities;
 
 namespace NRules.Rete
 {
@@ -24,7 +24,7 @@ namespace NRules.Rete
         {
             try
             {
-                return _compiledExpression.Delegate(new[] {fact.Object});
+                return _compiledExpression.Delegate(new[] { fact.Object });
             }
             catch (Exception e)
             {

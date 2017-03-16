@@ -15,7 +15,7 @@ namespace NRules
         {
             Expression = expression;
         }
-        
+
         [SecuritySafeCritical]
         protected RuleExpressionEvaluationException(SerializationInfo info, StreamingContext context)
             : base(info, context)
@@ -50,6 +50,6 @@ namespace NRules
                 }
                 return message;
             }
-        } 
+        }
     }
 }

@@ -1,6 +1,6 @@
-﻿using System;
+﻿using NRules.Utilities;
+using System;
 using System.Linq.Expressions;
-using NRules.Utilities;
 
 namespace NRules.Rete
 {

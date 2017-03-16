@@ -1,13 +1,13 @@
-using System;
-using System.Linq;
 using NRules.Diagnostics;
 using NRules.Rete;
+using System;
+using System.Linq;
 
 namespace NRules
 {
     /// <summary>
     /// Represents a rules engine session. Created by <see cref="ISessionFactory"/>.
-    /// Each session has its own working memory, and exposes operations that 
+    /// Each session has its own working memory, and exposes operations that
     /// manipulate facts in it, as well as fire matching rules.
     /// </summary>
     /// <event cref="IEventProvider.FactInsertingEvent">Before processing fact insertion.</event>

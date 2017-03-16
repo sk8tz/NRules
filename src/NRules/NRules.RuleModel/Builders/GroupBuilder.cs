@@ -53,7 +53,7 @@ namespace NRules.RuleModel.Builders
         {
             var builder = new PatternBuilder(Scope, declaration);
             _nestedBuilders.Add(builder);
-            return builder;            
+            return builder;
         }
 
         /// <summary>
@@ -116,9 +116,11 @@ namespace NRules.RuleModel.Builders
                 case GroupType.And:
                     groupElement = new AndElement(Scope.VisibleDeclarations, childElements);
                     break;
+
                 case GroupType.Or:
                     groupElement = new OrElement(Scope.VisibleDeclarations, childElements);
                     break;
+
                 default:
                     throw new InvalidOperationException(string.Format("Unrecognized group type. GroupType={0}", _groupType));
             }
@@ -135,6 +137,7 @@ namespace NRules.RuleModel.Builders
                         throw new InvalidOperationException("Group element AND requires at least one child element");
                     }
                     break;
+
                 case GroupType.Or:
                     if (_nestedBuilders.Count < 1)
                     {

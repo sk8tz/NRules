@@ -5,8 +5,11 @@ namespace NRules.Rete
     internal interface IBetaMemoryNode : ITupleSource, INode
     {
         IEnumerable<ITupleSink> Sinks { get; }
+
         void PropagateAssert(IExecutionContext context, Tuple tuple, Fact fact);
+
         void PropagateUpdate(IExecutionContext context, Tuple tuple, Fact fact);
+
         void PropagateRetract(IExecutionContext context, Tuple tuple, Fact fact);
     }
 

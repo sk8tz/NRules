@@ -1,8 +1,8 @@
+using NRules.Rete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using NRules.Rete;
 using Tuple = NRules.Rete.Tuple;
 
 namespace NRules.Diagnostics

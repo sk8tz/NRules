@@ -5,9 +5,13 @@ namespace NRules
     internal interface IAgenda
     {
         bool HasActiveRules();
+
         Activation NextActivation();
+
         void Activate(Activation activation);
+
         void Reactivate(Activation activation);
+
         void Deactivate(Activation activation);
     }
 

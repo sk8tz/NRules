@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-using NRules.Collections;
+﻿using NRules.Collections;
 using NRules.Rete;
 using NRules.RuleModel;
+using System.Collections.Generic;
 
 namespace NRules
 {

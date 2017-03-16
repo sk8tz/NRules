@@ -1,6 +1,6 @@
+using NRules.Rete;
 using System;
 using System.Linq.Expressions;
-using NRules.Rete;
 using Tuple = NRules.Rete.Tuple;
 
 namespace NRules.Diagnostics
@@ -19,7 +19,7 @@ namespace NRules.Diagnostics
 
         /// <summary>
         /// Raised when an existing activation is updated.
-        /// An activation is updated when a previously matching set of facts (tuple) is updated 
+        /// An activation is updated when a previously matching set of facts (tuple) is updated
         /// and it still matches the rule.
         /// The activation is updated in the agenda and remains a candidate for firing.
         /// </summary>
@@ -27,7 +27,7 @@ namespace NRules.Diagnostics
 
         /// <summary>
         /// Raised when an existing activation is deleted.
-        /// An activation is deleted when a previously matching set of facts (tuple) no longer 
+        /// An activation is deleted when a previously matching set of facts (tuple) no longer
         /// matches the rule due to updated or retracted facts.
         /// The activation is removed from the agenda and is no longer a candidate for firing.
         /// </summary>
@@ -88,17 +88,29 @@ namespace NRules.Diagnostics
     internal interface IEventAggregator : IEventProvider
     {
         void RaiseActivationCreated(ISession session, Activation activation);
+
         void RaiseActivationUpdated(ISession session, Activation activation);
+
         void RaiseActivationDeleted(ISession session, Activation activation);
+
         void RaiseRuleFiring(ISession session, Activation activation);
+
         void RaiseRuleFired(ISession session, Activation activation);
+
         void RaiseFactInserting(ISession session, Fact fact);
+
         void RaiseFactInserted(ISession session, Fact fact);
+
         void RaiseFactUpdating(ISession session, Fact fact);
+
         void RaiseFactUpdated(ISession session, Fact fact);
+
         void RaiseFactRetracting(ISession session, Fact fact);
+
         void RaiseFactRetracted(ISession session, Fact fact);
+
         void RaiseActionFailed(ISession session, ICompiledRule rule, Exception exception, Expression expression, Tuple tuple, out bool isHandled);
+
         void RaiseConditionFailed(ISession session, Exception exception, Expression expression, Tuple tuple, Fact fact);
     }
 
@@ -107,17 +119,29 @@ namespace NRules.Diagnostics
         private readonly IEventAggregator _parent;
 
         public event EventHandler<AgendaEventArgs> ActivationCreatedEvent;
+
         public event EventHandler<AgendaEventArgs> ActivationUpdatedEvent;
+
         public event EventHandler<AgendaEventArgs> ActivationDeletedEvent;
+
         public event EventHandler<AgendaEventArgs> RuleFiringEvent;
+
         public event EventHandler<AgendaEventArgs> RuleFiredEvent;
+
         public event EventHandler<WorkingMemoryEventArgs> FactInsertingEvent;
+
         public event EventHandler<WorkingMemoryEventArgs> FactInsertedEvent;
+
         public event EventHandler<WorkingMemoryEventArgs> FactUpdatingEvent;
+
         public event EventHandler<WorkingMemoryEventArgs> FactUpdatedEvent;
+
         public event EventHandler<WorkingMemoryEventArgs> FactRetractingEvent;
+
         public event EventHandler<WorkingMemoryEventArgs> FactRetractedEvent;
+
         public event EventHandler<ActionErrorEventArgs> ActionFailedEvent;
+
         public event EventHandler<ConditionErrorEventArgs> ConditionFailedEvent;
 
         public EventAggregator()

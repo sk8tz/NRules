@@ -1,5 +1,5 @@
-﻿using System;
-using NRules.Rete;
+﻿using NRules.Rete;
+using System;
 
 namespace NRules.Diagnostics
 {

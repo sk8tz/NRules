@@ -37,6 +37,6 @@ namespace NRules.RuleModel
         /// <summary>
         /// Resulting aggregates.
         /// </summary>
-        IEnumerable<object> Aggregates { get; } 
+        IEnumerable<object> Aggregates { get; }
     }
 }

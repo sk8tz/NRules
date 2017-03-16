@@ -27,7 +27,7 @@ namespace NRules.RuleModel
         /// Rule name.
         /// </summary>
         string Name { get; }
-        
+
         /// <summary>
         /// Rule description.
         /// </summary>

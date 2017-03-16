@@ -1,8 +1,8 @@
+using NRules.RuleModel.Aggregators;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using NRules.RuleModel.Aggregators;
 
 namespace NRules.RuleModel.Builders
 {
@@ -17,12 +17,12 @@ namespace NRules.RuleModel.Builders
         private const string FlattenName = "Flatten";
 
         private readonly Type _resultType;
-        private IAggregatorFactory _aggregatorFactory; 
+        private IAggregatorFactory _aggregatorFactory;
         private PatternBuilder _sourceBuilder;
         private string _name;
         private readonly Dictionary<string, LambdaExpression> _expressions = new Dictionary<string, LambdaExpression>();
 
-        internal AggregateBuilder(Type resultType, SymbolTable scope) 
+        internal AggregateBuilder(Type resultType, SymbolTable scope)
             : base(scope.New("Aggregate"))
         {
             _resultType = resultType;
@@ -46,7 +46,7 @@ namespace NRules.RuleModel.Builders
                     "Aggregator type must have a parameterless constructor to be used directly. Provide aggregator factory instead.");
             }
             Type factoryType = typeof(DefaultAggregatorFactory<>).MakeGenericType(aggregatorType);
-            var aggregatorFactory = (IAggregatorFactory) Activator.CreateInstance(factoryType);
+            var aggregatorFactory = (IAggregatorFactory)Activator.CreateInstance(factoryType);
             AggregatorFactory(name, aggregatorFactory);
         }
 
@@ -67,7 +67,7 @@ namespace NRules.RuleModel.Builders
         /// <param name="elementType">Type of elements to aggregate.</param>
         public void CollectionOf(Type elementType)
         {
-            Type aggregateType = typeof (CollectionAggregator<>).MakeGenericType(elementType);
+            Type aggregateType = typeof(CollectionAggregator<>).MakeGenericType(elementType);
             Aggregator(CollectName, aggregateType);
         }
 

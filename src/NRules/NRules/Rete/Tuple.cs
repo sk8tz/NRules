@@ -35,7 +35,7 @@ namespace NRules.Rete
             object value;
             if (_stateMap != null && _stateMap.TryGetValue(node, out value))
             {
-                return (T) value;
+                return (T)value;
             }
             return default(T);
         }

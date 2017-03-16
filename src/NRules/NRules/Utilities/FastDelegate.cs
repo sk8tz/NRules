@@ -6,7 +6,7 @@ namespace NRules.Utilities
 {
     internal abstract class FastDelegate
     {
-        public static FastDelegate<TDelegate> Create<TDelegate>(LambdaExpression expression) where TDelegate : class 
+        public static FastDelegate<TDelegate> Create<TDelegate>(LambdaExpression expression) where TDelegate : class
         {
             if (!typeof(TDelegate).IsSubclassOf(typeof(Delegate)))
             {
@@ -34,7 +34,7 @@ namespace NRules.Utilities
             /// <returns>Transformed expression.</returns>
             public Expression<TDelegate> CompactParameters(LambdaExpression expression)
             {
-                _arrayParameter = Expression.Parameter(typeof (object[]));
+                _arrayParameter = Expression.Parameter(typeof(object[]));
                 _indexMap = expression.Parameters.ToIndexMap();
                 Expression body = Visit(expression.Body);
                 Expression<TDelegate> optimizedLambda = Expression.Lambda<TDelegate>(body, _arrayParameter);

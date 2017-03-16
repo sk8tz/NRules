@@ -1,7 +1,7 @@
+using NRules.Rete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using NRules.Rete;
 
 namespace NRules.Diagnostics
 {
@@ -31,21 +31,21 @@ namespace NRules.Diagnostics
     [Serializable]
     public class NodeInfo
     {
-        private static readonly string[] Empty = {};
+        private static readonly string[] Empty = { };
 
         internal static NodeInfo Create(RootNode node)
         {
             return new NodeInfo(NodeType.Root, string.Empty);
         }
-        
+
         internal static NodeInfo Create(TypeNode node)
         {
             return new NodeInfo(NodeType.Type, node.FilterType.Name);
         }
-        
+
         internal static NodeInfo Create(SelectionNode node)
         {
-            return new NodeInfo(NodeType.Selection, string.Empty, new[] {node.Condition.ToString()}, Empty, Empty);
+            return new NodeInfo(NodeType.Selection, string.Empty, new[] { node.Condition.ToString() }, Empty, Empty);
         }
 
         internal static NodeInfo Create(AlphaMemoryNode node, IAlphaMemory memory)

@@ -8,16 +8,16 @@ namespace NRules.RuleModel.Aggregators
     /// <typeparam name="TElement">Type of elements to collect.</typeparam>
     internal class CollectionAggregator<TElement> : IAggregator
     {
-        private readonly FactCollection<TElement> _items = new FactCollection<TElement>(); 
+        private readonly FactCollection<TElement> _items = new FactCollection<TElement>();
 
         public IEnumerable<AggregationResult> Initial()
         {
-            return new[] {AggregationResult.Added(_items)};
+            return new[] { AggregationResult.Added(_items) };
         }
 
         public IEnumerable<AggregationResult> Add(object fact)
         {
-            var item = (TElement) fact;
+            var item = (TElement)fact;
             _items.Add(item);
             return new[] { AggregationResult.Modified(_items) };
         }
@@ -33,9 +33,9 @@ namespace NRules.RuleModel.Aggregators
         {
             var item = (TElement)fact;
             _items.Remove(item);
-            return new[] {AggregationResult.Modified(_items)};
+            return new[] { AggregationResult.Modified(_items) };
         }
 
-        public IEnumerable<object> Aggregates { get { return new[] {_items}; } }
+        public IEnumerable<object> Aggregates { get { return new[] { _items }; } }
     }
 }

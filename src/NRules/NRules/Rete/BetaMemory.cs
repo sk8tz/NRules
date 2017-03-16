@@ -1,13 +1,16 @@
-﻿using System.Collections.Generic;
-using NRules.Collections;
+﻿using NRules.Collections;
+using System.Collections.Generic;
 
 namespace NRules.Rete
 {
     internal interface IBetaMemory
     {
         IEnumerable<Tuple> Tuples { get; }
+
         void Add(Tuple tuple);
+
         void Remove(Tuple tuple);
+
         Tuple FindTuple(Tuple leftTuple, Fact rightFact);
     }
 
@@ -16,7 +19,7 @@ namespace NRules.Rete
         private static readonly Fact NullFact = new Fact();
 
         private readonly OrderedHashSet<Tuple> _tuples = new OrderedHashSet<Tuple>();
-        private readonly Dictionary<Tuple, Dictionary<Fact, Tuple>> _parentToChildMap = new Dictionary<Tuple, Dictionary<Fact, Tuple>>(); 
+        private readonly Dictionary<Tuple, Dictionary<Fact, Tuple>> _parentToChildMap = new Dictionary<Tuple, Dictionary<Fact, Tuple>>();
 
         public IEnumerable<Tuple> Tuples
         {

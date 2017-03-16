@@ -7,6 +7,8 @@ namespace NRules.RuleModel
     /// </summary>
     public abstract class RuleLeftElement : RuleElement
     {
-        internal RuleLeftElement(IEnumerable<Declaration> declarations) : base(declarations) { }
+        internal RuleLeftElement(IEnumerable<Declaration> declarations) : base(declarations)
+        {
+        }
     }
 }

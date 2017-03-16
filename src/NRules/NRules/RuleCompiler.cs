@@ -1,9 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using NRules.Rete;
 using NRules.RuleModel;
 using NRules.RuleModel.Builders;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace NRules
 {

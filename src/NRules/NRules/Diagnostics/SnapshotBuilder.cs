@@ -1,14 +1,14 @@
+using NRules.Rete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using NRules.Rete;
 
 namespace NRules.Diagnostics
 {
     internal class SnapshotBuilder
     {
         private readonly List<Tuple<INode, INode>> _links = new List<Tuple<INode, INode>>();
-        private readonly Dictionary<INode, NodeInfo> _nodeMap = new Dictionary<INode, NodeInfo>(); 
+        private readonly Dictionary<INode, NodeInfo> _nodeMap = new Dictionary<INode, NodeInfo>();
 
         public bool IsVisited(INode node)
         {

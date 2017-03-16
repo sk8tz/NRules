@@ -33,7 +33,7 @@ namespace NRules
     public interface ISessionFactory
     {
         /// <summary>
-        /// Provider of events aggregated across all rule sessions. 
+        /// Provider of events aggregated across all rule sessions.
         /// Event sender is used to convey the session instance responsible for the event.
         /// Use it to subscribe to various rules engine lifecycle events.
         /// </summary>

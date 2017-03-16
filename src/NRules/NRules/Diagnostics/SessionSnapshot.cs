@@ -11,7 +11,7 @@ namespace NRules.Diagnostics
     {
         private readonly List<NodeInfo> _nodes;
         private readonly List<LinkInfo> _links;
-        
+
         internal SessionSnapshot(IEnumerable<NodeInfo> nodes, IEnumerable<LinkInfo> links)
         {
             _nodes = new List<NodeInfo>(nodes);

@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using NRules.RuleModel;
+using NRules.Utilities;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using NRules.RuleModel;
-using NRules.Utilities;
 
 namespace NRules.Rete
 {

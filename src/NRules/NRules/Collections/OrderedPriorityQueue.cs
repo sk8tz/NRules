@@ -67,7 +67,7 @@ namespace NRules.Collections
                 int result = _keyComparer.Compare(x.Key, y.Key);
                 if (result == 0)
                 {
-                    result = -1*_orderComparer.Compare(x.Order, y.Order); //min first - FIFO
+                    result = -1 * _orderComparer.Compare(x.Order, y.Order); //min first - FIFO
                 }
                 return result;
             }

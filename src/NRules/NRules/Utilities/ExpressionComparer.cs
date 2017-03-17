@@ -15,9 +15,12 @@ namespace NRules.Utilities
 
         private static bool ExpressionEqual(Expression x, Expression y, LambdaExpression rootX, LambdaExpression rootY)
         {
-            if (ReferenceEquals(x, y)) return true;
-            if (x == null || y == null) return false;
-            if (x.NodeType != y.NodeType || x.Type != y.Type) return false;
+            if (ReferenceEquals(x, y)) 
+                return true;
+            if (x == null || y == null) 
+                return false;
+            if (x.NodeType != y.NodeType || x.Type != y.Type) 
+                return false;
 
             if (x is LambdaExpression)
             {

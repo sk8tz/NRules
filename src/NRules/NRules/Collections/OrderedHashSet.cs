@@ -44,7 +44,8 @@ namespace NRules.Collections
         {
             LinkedListNode<TValue> node;
             bool found = _dictionary.TryGetValue(item, out node);
-            if (!found) return false;
+            if (!found) 
+                return false;
             _dictionary.Remove(item);
             _linkedList.Remove(node);
             return true;
@@ -72,7 +73,8 @@ namespace NRules.Collections
 
         public bool Add(TValue item)
         {
-            if (_dictionary.ContainsKey(item)) return false;
+            if (_dictionary.ContainsKey(item)) 
+                return false;
             LinkedListNode<TValue> node = _linkedList.AddLast(item);
             _dictionary.Add(item, node);
             return true;

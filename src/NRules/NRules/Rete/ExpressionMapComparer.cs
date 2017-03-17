@@ -8,7 +8,8 @@ namespace NRules.Rete
     {
         public static bool AreEqual(ExpressionMap first, ExpressionMap second)
         {
-            if (first.Count != second.Count) return false;
+            if (first.Count != second.Count) 
+                return false;
             //Assume values are sorted
             var pairs = first.Zip(second, System.Tuple.Create);
             bool result = pairs.All(t =>

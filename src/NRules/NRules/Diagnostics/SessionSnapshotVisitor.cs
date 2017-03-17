@@ -13,28 +13,32 @@ namespace NRules.Diagnostics
 
         protected internal override void VisitRootNode(SnapshotBuilder builder, RootNode node)
         {
-            if (builder.IsVisited(node)) return;
+            if (builder.IsVisited(node)) 
+                return;
             builder.AddNode(node, NodeInfo.Create);
             base.VisitRootNode(builder, node);
         }
 
         protected internal override void VisitTypeNode(SnapshotBuilder builder, TypeNode node)
         {
-            if (builder.IsVisited(node)) return;
+            if (builder.IsVisited(node)) 
+                return;
             builder.AddNode(node, NodeInfo.Create);
             base.VisitTypeNode(builder, node);
         }
 
         protected internal override void VisitSelectionNode(SnapshotBuilder builder, SelectionNode node)
         {
-            if (builder.IsVisited(node)) return;
+            if (builder.IsVisited(node)) 
+                return;
             builder.AddNode(node, NodeInfo.Create);
             base.VisitSelectionNode(builder, node);
         }
 
         protected internal override void VisitAlphaMemoryNode(SnapshotBuilder builder, AlphaMemoryNode node)
         {
-            if (builder.IsVisited(node)) return;
+            if (builder.IsVisited(node)) 
+                return;
             builder.AddNode(node, n => NodeInfo.Create(n, _workingMemory.GetNodeMemory(n)));
             builder.AddLinks(node, node.Sinks);
             base.VisitAlphaMemoryNode(builder, node);
@@ -52,35 +56,40 @@ namespace NRules.Diagnostics
 
         protected internal override void VisitJoinNode(SnapshotBuilder builder, JoinNode node)
         {
-            if (builder.IsVisited(node)) return;
+            if (builder.IsVisited(node)) 
+                return;
             builder.AddNode(node, NodeInfo.Create);
             base.VisitJoinNode(builder, node);
         }
 
         protected internal override void VisitNotNode(SnapshotBuilder builder, NotNode node)
         {
-            if (builder.IsVisited(node)) return;
+            if (builder.IsVisited(node)) 
+                return;
             builder.AddNode(node, NodeInfo.Create);
             base.VisitNotNode(builder, node);
         }
 
         protected internal override void VisitExistsNode(SnapshotBuilder builder, ExistsNode node)
         {
-            if (builder.IsVisited(node)) return;
+            if (builder.IsVisited(node)) 
+                return;
             builder.AddNode(node, NodeInfo.Create);
             base.VisitExistsNode(builder, node);
         }
 
         protected internal override void VisitAggregateNode(SnapshotBuilder builder, AggregateNode node)
         {
-            if (builder.IsVisited(node)) return;
+            if (builder.IsVisited(node)) 
+                return;
             builder.AddNode(node, NodeInfo.Create);
             base.VisitAggregateNode(builder, node);
         }
 
         protected internal override void VisitObjectInputAdapter(SnapshotBuilder builder, ObjectInputAdapter node)
         {
-            if (builder.IsVisited(node)) return;
+            if (builder.IsVisited(node)) 
+                return;
             builder.AddNode(node, NodeInfo.Create);
             builder.AddLinks(node, node.Sinks);
             base.VisitObjectInputAdapter(builder, node);
@@ -88,7 +97,8 @@ namespace NRules.Diagnostics
 
         protected internal override void VisitBetaMemoryNode(SnapshotBuilder builder, BetaMemoryNode node)
         {
-            if (builder.IsVisited(node)) return;
+            if (builder.IsVisited(node)) 
+                return;
             builder.AddNode(node, n => NodeInfo.Create(n, _workingMemory.GetNodeMemory(n)));
             builder.AddLinks(node, node.Sinks);
             base.VisitBetaMemoryNode(builder, node);
@@ -102,7 +112,8 @@ namespace NRules.Diagnostics
 
         protected internal override void VisitTerminalNode(SnapshotBuilder builder, TerminalNode node)
         {
-            if (builder.IsVisited(node)) return;
+            if (builder.IsVisited(node)) 
+                return;
             builder.AddNode(node, NodeInfo.Create);
             builder.AddLink(node, node.RuleNode);
             base.VisitTerminalNode(builder, node);
@@ -110,7 +121,8 @@ namespace NRules.Diagnostics
 
         protected internal override void VisitRuleNode(SnapshotBuilder builder, RuleNode node)
         {
-            if (builder.IsVisited(node)) return;
+            if (builder.IsVisited(node)) 
+                return;
             builder.AddNode(node, NodeInfo.Create);
             base.VisitRuleNode(builder, node);
         }

@@ -116,10 +116,14 @@ namespace NRules.Fluent
 
         private static bool IsPublicConcrete(Type type)
         {
-            if (!type.IsPublic) return false;
-            if (type.IsAbstract) return false;
-            if (type.IsInterface) return false;
-            if (type.IsGenericTypeDefinition) return false;
+            if (!type.IsPublic) 
+                return false;
+            if (type.IsAbstract) 
+                return false;
+            if (type.IsInterface) 
+                return false;
+            if (type.IsGenericTypeDefinition) 
+                return false;
 
             return true;
         }

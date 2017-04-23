@@ -35,20 +35,20 @@ namespace NRules.Rete
 
         public bool Equals(AlphaCondition other)
         {
-            if (ReferenceEquals(null, other)) 
+            if (ReferenceEquals(null, other))
                 return false;
-            if (ReferenceEquals(this, other)) 
+            if (ReferenceEquals(this, other))
                 return true;
             return ExpressionComparer.AreEqual(_expression, other._expression);
         }
 
         public override bool Equals(object obj)
         {
-            if (ReferenceEquals(null, obj)) 
+            if (ReferenceEquals(null, obj))
                 return false;
-            if (ReferenceEquals(this, obj)) 
+            if (ReferenceEquals(this, obj))
                 return true;
-            if (obj.GetType() != this.GetType()) 
+            if (obj.GetType() != this.GetType())
                 return false;
             return Equals((AlphaCondition)obj);
         }

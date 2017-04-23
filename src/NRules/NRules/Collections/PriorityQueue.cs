@@ -90,7 +90,7 @@ namespace NRules.Collections
                     ExchangeElements(parentPos, pos);
                     pos = parentPos;
                 }
-                else 
+                else
                     break;
             }
         }
@@ -131,7 +131,7 @@ namespace NRules.Collections
                     ExchangeElements(largest, pos);
                     pos = largest;
                 }
-                else 
+                else
                     break;
             }
         }

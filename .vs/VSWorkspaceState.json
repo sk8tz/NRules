@@ -1,0 +1,20 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\samples\\ClaimsAdjudication",
+    "\\samples\\ClaimsAdjudication\\ClaimsExpert.Contract",
+    "\\samples\\ClaimsAdjudication\\ClaimsExpert.Domain",
+    "\\samples\\ClaimsAdjudication\\ClaimsExpert.Rules",
+    "\\samples\\ClaimsAdjudication\\ClaimsExpert.Service",
+    "\\samples\\ClaimsAdjudication\\ClaimsExpert.Service\\Modules",
+    "\\samples\\ClaimsAdjudication\\ClaimsExpert.Service\\Properties",
+    "\\samples\\ClaimsAdjudication\\ClaimsExpert.Service\\Services",
+    "\\samples\\SimpleRules",
+    "\\samples\\SimpleRules\\SimpleRules",
+    "\\samples\\SimpleRules\\SimpleRules\\Domain",
+    "\\src",
+    "\\src\\NRules"
+  ],
+  "SelectedNode": "\\tools",
+  "PreviewInSolutionExplorer": false
+}

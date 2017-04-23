@@ -52,7 +52,7 @@ namespace NRules.Rete
 
         private void AddMapping(Tuple tuple)
         {
-            if (tuple.LeftTuple == null) 
+            if (tuple.LeftTuple == null)
                 return;
             Dictionary<Fact, Tuple> subMap;
             if (!_parentToChildMap.TryGetValue(tuple.LeftTuple, out subMap))
@@ -65,13 +65,13 @@ namespace NRules.Rete
 
         private void RemoveMapping(Tuple tuple)
         {
-            if (tuple.LeftTuple == null) 
+            if (tuple.LeftTuple == null)
                 return;
             Dictionary<Fact, Tuple> subMap;
             if (_parentToChildMap.TryGetValue(tuple.LeftTuple, out subMap))
             {
                 subMap.Remove(tuple.RightFact ?? NullFact);
-                if (subMap.Count == 0) 
+                if (subMap.Count == 0)
                     _parentToChildMap.Remove(tuple.LeftTuple);
             }
         }

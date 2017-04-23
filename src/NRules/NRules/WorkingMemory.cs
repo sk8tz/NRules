@@ -57,7 +57,7 @@ namespace NRules
         public Fact GetInternalFact(INode node, object factObject)
         {
             Dictionary<object, Fact> factMap;
-            if (!_internalFactMap.TryGetValue(node, out factMap)) 
+            if (!_internalFactMap.TryGetValue(node, out factMap))
                 return null;
 
             Fact fact;
@@ -80,11 +80,11 @@ namespace NRules
         public void RemoveInternalFact(INode node, Fact fact)
         {
             Dictionary<object, Fact> factMap;
-            if (!_internalFactMap.TryGetValue(node, out factMap)) 
+            if (!_internalFactMap.TryGetValue(node, out factMap))
                 return;
 
             factMap.Remove(fact.RawObject);
-            if (factMap.Count == 0) 
+            if (factMap.Count == 0)
                 _internalFactMap.Remove(node);
         }
 

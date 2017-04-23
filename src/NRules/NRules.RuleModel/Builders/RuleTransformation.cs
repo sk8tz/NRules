@@ -47,7 +47,7 @@ namespace NRules.RuleModel.Builders
 
         internal T Transform<T>(Context context, RuleElement element) where T : RuleElement
         {
-            if (element == null) 
+            if (element == null)
                 return null;
 
             bool savedIsModified = context.IsModified;

@@ -10,12 +10,12 @@ namespace NRules.Rete
             List<IBetaCondition> collection1 = first.ToList();
             List<IBetaCondition> collection2 = second.ToList();
 
-            if (collection1.Count != collection2.Count) 
+            if (collection1.Count != collection2.Count)
                 return false;
 
             for (int i = 0; i < collection1.Count; i++)
             {
-                if (!Equals(collection1[i], collection2[i])) 
+                if (!Equals(collection1[i], collection2[i]))
                     return false;
             }
 

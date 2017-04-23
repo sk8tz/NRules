@@ -9,7 +9,7 @@ namespace NRules.Fluent.Expressions
         {
             if (alias == null)
             {
-                throw new ArgumentNullException("alias", "Pattern alias is null");
+                throw new ArgumentNullException(nameof(alias), "Pattern alias is null");
             }
             var fieldMember = alias.Body as MemberExpression;
             if (fieldMember == null)
